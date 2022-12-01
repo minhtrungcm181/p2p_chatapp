@@ -23,7 +23,7 @@
             <table class = "table">
             <thead>
       <tr>
-        <th>Username</th>
+        <th>Friend</th>
        
       </tr>
     </thead>
@@ -33,6 +33,7 @@
     <tbody>
     <tr>
         <td> <?php echo $row['clientname'];?> </td>
+        <td> <?php echo $row['address'];?> </td>
         
         <?php } ?>
     </tbody>
