@@ -14,6 +14,6 @@ while($r2 = mysqli_fetch_assoc($result)) {
     $rowjson2[] = $r2;
 
 }
-json_encode($rowjson2);
+echo json_encode($rowjson2);
 
 ?>

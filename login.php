@@ -7,6 +7,7 @@
     
         $myusername = mysqli_real_escape_string($con,$_POST['username']);
         $mypassword = mysqli_real_escape_string($con,$_POST['password']);
+        $port = mysqli_real_escape_string($con,$_POST['port']);
     
         $sql = "SELECT * FROM account WHERE username = '$myusername' and password = '$mypassword'";
         $result = mysqli_query($con,$sql);
@@ -22,7 +23,8 @@
             }
 
             include('getipfromclient.php');
-            $sql2 = "UPDATE account set address = '$ip' WHERE username = '$myusername' ";
+            $ipandport = $ip . ',' . $port;
+            $sql2 = "UPDATE account set address = '$ipandport' WHERE username = '$myusername' ";
             $result = mysqli_query($con, $sql2);
             header('location:friendlist.php');
         }else {
